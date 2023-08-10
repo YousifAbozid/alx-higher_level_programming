@@ -20,8 +20,8 @@ if __name__ == "__main__":
             print("Unknown operator. Available operators: +, -, * and /")
             sys.exit(1)
         print(
-            "{:d} {:s} {:d} = {:d}".format(int(argv[1]), argv[2], int(argv[3]), result)
-        )
+            "{:d} {:s} {:d} = {:d}".format(int(argv[1]), argv[2],
+                                           int(argv[3]), result))
     else:
         print("Usage: ./100-my_calculator.py <a> <operator> <b>")
         sys.exit(1)
