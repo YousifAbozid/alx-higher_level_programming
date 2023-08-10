@@ -41,3 +41,4 @@ Enjoy!
 
 0. [0x00-python-hello_world](./0x00-python-hello_world)
 1. [0x01-python-if_else_loops_functions](./0x01-python-if_else_loops_functions)
+2. [0x02-python-import_modules](./0x02-python-import_modules)
