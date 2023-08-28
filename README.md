@@ -44,3 +44,4 @@ Enjoy!
 2. [0x02-python-import_modules](./0x02-python-import_modules)
 3. [0x03-python-data_structures](./0x03-python-data_structures)
 4. [0x04-python-more_data_structures](./0x04-python-more_data_structures)
+5. [0x05-python-exceptions](./0x05-python-exceptions)
