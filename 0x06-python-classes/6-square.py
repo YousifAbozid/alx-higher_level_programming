@@ -40,19 +40,20 @@ class Square:
         self.__size = value
 
     def my_print(self):
-        """Prints in stdout the square with the character #"""
+        """Public instance that prints the square with the char #"""
         if self.__size == 0:
-            print()
+            print("")
             return
-
-        for i in range(self.__position[1]):
-            print()
-        for i in range(self.__size):
-            for j in range(self.__position[0]):
-                print(" ", end="")
-            for j in range(self.__size):
+        if self.__position[1] > 0:
+            for l in range(0, self.__position[1]):
+                print("")
+        for i in range(0, self.__size):
+            if self.__position[0] > 0:
+                for k in range(0, self.__position[0]):
+                    print(" ", end="")
+            for j in range(0, self.__size):
                 print("#", end="")
-            print()
+            print("")
 
     @property
     def position(self):
