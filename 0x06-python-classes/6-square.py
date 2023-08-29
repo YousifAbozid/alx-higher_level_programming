@@ -17,13 +17,18 @@ class Square:
             raise TypeError("size must be an integer")
         if size < 0:
             raise ValueError("size must be >= 0")
+        if (
+            type(value) != tuple
+            or len(value) != 2
+            or type(value[0]) != int
+            or type(value[1]) != int
+            or value[0] < 0
+            or value[1] < 0
+        ):
+            raise TypeError("position must be a tuple of 2 positive integers")
 
         self.__size = size
         self.__position = position
-
-    def area(self):
-        """Returns the current square area"""
-        return self.__size**2
 
     @property
     def size(self):
@@ -33,11 +38,21 @@ class Square:
     @size.setter
     def size(self, value):
         """Sets the current size"""
-        if type(value) != int:
-            raise TypeError("size must be an integer")
-        if value < 0:
-            raise ValueError("size must be >= 0")
         self.__size = value
+
+    @property
+    def position(self):
+        """Returns the current position"""
+        return self.__position
+
+    @position.setter
+    def position(self, value):
+        """Sets the current position"""
+        self.__position = value
+
+    def area(self):
+        """Returns the current square area"""
+        return self.__size**2
 
     def my_print(self):
         """Public instance that prints the square with the char #"""
@@ -54,22 +69,3 @@ class Square:
             for j in range(0, self.__size):
                 print("#", end="")
             print("")
-
-    @property
-    def position(self):
-        """Returns the current position"""
-        return self.__position
-
-    @position.setter
-    def position(self, value):
-        """Sets the current position"""
-        if (
-            type(value) != tuple
-            or len(value) != 2
-            or type(value[0]) != int
-            or type(value[1]) != int
-            or value[0] < 0
-            or value[1] < 0
-        ):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = value
