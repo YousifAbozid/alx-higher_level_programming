@@ -1,39 +1,42 @@
 #!/usr/bin/python3
-"""
-7. Singly linked list
-A class Node that defines a node of a singly linked list
-"""
+
+""" Define a Node class """
 
 
 class Node:
-    """class Node that defines a node of a singly linked list"""
+    """Node Class"""
 
     def __init__(self, data, next_node=None):
-        """private instance attribute data and next_node"""
-        self.__data = data
-        self.__next_node = next_node
+        """Initialize a new node.
+
+        Args:
+            data (int): new Node's data.
+            next_node (Node): next node of the Node.
+        """
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
-        """property to retrieve it"""
+        """Get data of the node."""
         return self.__data
 
     @data.setter
     def data(self, value):
-        """property setter to set it"""
-        if type(data) is not int:
+        """Set data of the node."""
+        if not isinstance(value, int):
             raise TypeError("data must be an integer")
         self.__data = value
 
     @property
     def next_node(self):
-        """property to retrieve it"""
+        """Get the next node of the node."""
         return self.__next_node
 
     @next_node.setter
     def next_node(self, value):
-        """property setter to set it"""
-        if next_node is not None and type(next_node) is not Node:
+        """Set the next node of the node."""
+        if not isinstance(value, Node) and value is not None:
             raise TypeError("next_node must be a Node object")
         self.__next_node = value
 
