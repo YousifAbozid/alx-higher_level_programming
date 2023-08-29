@@ -6,53 +6,47 @@ A class Square that defines a square
 
 
 class Square:
-    """Class that defines a square"""
+    """class Square that defines a square"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """Initializes the square size as private instance attribute
-        Raise TypeError & ValueError if not int or <0 resp.
-        """
-
-        if type(size) != int:
+        """Instantiation with optional size and position"""
+        if not type(size) is int:
             raise TypeError("size must be an integer")
-        if size < 0:
+        elif size < 0:
             raise ValueError("size must be >= 0")
-        if (
-            type(value) != tuple
-            or len(value) != 2
-            or type(value[0]) != int
-            or type(value[1]) != int
-            or value[0] < 0
-            or value[1] < 0
-        ):
+        elif not type(position) is tuple or len(position) != 2:
             raise TypeError("position must be a tuple of 2 positive integers")
-
-        self.__size = size
-        self.__position = position
+        elif (not type(position[0]) is int) or (not type(position[1]) is int):
+            raise TypeError("position must be a tuple of 2 positive integers")
+        elif position[0] < 0 or position[1] < 0:
+            raise TypeError("position must be a tuple of 2 positive integers")
+        else:
+            self.__size = size
+            self.__position = position
 
     @property
     def size(self):
-        """Returns the current size"""
+        """property to retrieve it"""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets the current size"""
+        """property setter to set it"""
         self.__size = value
 
     @property
     def position(self):
-        """Returns the current position"""
+        """property to retrieve it"""
         return self.__position
 
     @position.setter
     def position(self, value):
-        """Sets the current position"""
+        """property setter to set it"""
         self.__position = value
 
     def area(self):
-        """Returns the current square area"""
-        return self.__size**2
+        """Public instance that returns the  square area"""
+        return self.__size * self.__size
 
     def my_print(self):
         """Public instance that prints the square with the char #"""
